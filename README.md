@@ -3,6 +3,7 @@
 AWS Serverless Facebook Bot
 
 Used for: https://gitlab.com/mojilala/extension-v2
+---
 You Can Speak with the bot from: https://www.facebook.com/leostickersapp
 
 ### How To Deploy 
@@ -18,7 +19,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
       "locale": "default",
       "composer_input_disabled": false,
       "call_to_actions":[
-      {
+      {
         "type": "postback",
         "title": "🔎 Search Sticker",
         "payload": "Search"
