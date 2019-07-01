@@ -1,0 +1,28 @@
+service: mojilala-facebook-bot
+
+provider:
+  stage: prod
+  name: aws
+  runtime: nodejs10.x
+  profile: eb-cli
+  region: us-east-1
+  deploymentBucket:
+    name: com.mojilala.${self:provider.region}.serverless
+    serverSideEncryption: AES256
+
+
+plugins:
+  - serverless-offline
+
+functions:
+  webhook:
+    handler: handler.webhook
+    events:
+      - http:
+          path: webook
+          method: GET
+          integration: lambda
+      - http:
+          path: webook
+          method: POST
+          integration: lambda
